@@ -71,4 +71,19 @@ public class MovieService {
 		
 		return movies.toString();
 	}
+	
+	@GET
+	@Path("/content-rating/{rating}")
+	@Consumes(MediaType.TEXT_PLAIN)
+	@Produces(MediaType.APPLICATION_JSON)
+	public String getFromContentRating(@PathParam("rating") String rating){
+		ArrayList<Movie> movies = new ArrayList<>();
+		for(Movie movie:MovieCollection.movies){
+			if(movie.getContent_rating().equals(rating)){
+				movies.add(movie);
+			}
+		}
+		
+		return movies.toString();
+	}
 }
