@@ -1,86 +1,118 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta charset="UTF-8">
-<title>Movie Search</title>
-
-<link rel='stylesheet prefetch'
-	href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
-<link rel='stylesheet prefetch'
-	href='http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css'>
-<link rel="stylesheet" href="css/style.css">
-
+	<meta charset="UTF-8">
+	<title>Movie Database</title>
+	<link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
+	<link rel='stylesheet prefetch' href='http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css'>
+	<link rel="stylesheet" href="css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
 </head>
 
 <body>
+
+	<div class="jumbotron">
+		<h1>Movie Database</h1>
+		<img src="reel.png" class="moviedb-logo">
+	</div>
+
 	<div class="container">
+
 		<div class="row" id="search">
-			<form id="search-form" action="" method="POST"
-				enctype="multipart/form-data">
-				<div class="form-group col-xs-9">
-					<input class="form-control" type="text"
-						placeholder="Search movie by keyword" />
-				</div>
-				<div class="form-group col-xs-3">
-					<button type="submit" class="btn btn-block btn-primary">Search</button>
-				</div>
-			</form>
+			<div class="col-md-12">
+				<form id="search-form" action="" method="POST" enctype="multipart/form-data">
+					<div class="form-group col-xs-10">
+						<input class="form-control" type="text" placeholder="Search movie by keyword" />
+					</div>
+					<div class="form-group col-xs-2">
+						<button type="submit" class="btn btn-block btn-primary">Search</button>
+					</div>
+				</form>
+			</div>
 		</div>
+
 		<div class="row" id="filter">
-			<form>
-				<div class="form-group col-sm-3 col-xs-6 col-date">
-					<div style="bottom: 5px; position: relative; text-align: center;">Rating</div>
-					<div id="slider"></div>
-				</div>
+			<div class="col-md-12">
+				<form>
+					<div class="form-group col-xs-2 col-date">
+						<div style="bottom: 5px; position: relative; text-align: center;">Rating</div>
+						<div id="slider"></div>
+					</div>
 
-				<div class="form-group col-sm-3 col-xs-6 col-date">
-					<select data-filter="start-date"
-						class="filter-start-date filter form-control">
-						<option value="">Start Date</option>
-					</select>
-				</div>
-				<div class="form-group col-sm-3 col-xs-6 col-date">
-					<select data-filter="end-date"
-						class="filter-end-date filter form-control">
-						<option value="">End Date</option>
-					</select>
-				</div>
+					<div class="form-group col-xs-2 col-date">
+						<select data-filter="start-date" class="filter-start-date filter form-control">
+							<option value="">Start Date</option>
+						</select>
+					</div>
+					<div class="form-group col-xs-2 col-date">
+						<select data-filter="end-date" class="filter-end-date filter form-control">
+							<option value="">End Date</option>
+						</select>
+					</div>
 
-				<div class="form-group col-sm-3 col-xs-6 col-lang">
-					<select data-filter="lang"
-						class="filter-language filter form-control">
-						<option value="">Language</option>
-					</select>
-				</div>
-				<div class="form-group col-sm-3 col-xs-6 col-content-rating">
-					<select data-filter="content"
-						class="filter-content filter form-control">
-						<option value="">Content Rating</option>
-					</select>
-				</div>
-				<div class="form-group col-sm-3 col-xs-6 col-country">
-					<select data-filter="country"
-						class="filter-country filter form-control">
-						<option value="">Country</option>
-					</select>
-				</div>
-			</form>
+					<div class="form-group col-xs-2 col-lang">
+						<select data-filter="lang" class="filter-language filter form-control">
+							<option value="">Language</option>
+						</select>
+					</div>
+					<div class="form-group col-xs-2 col-content-rating">
+						<select data-filter="content" class="filter-content filter form-control">
+							<option value="">Content Rating</option>
+						</select>
+					</div>
+					<div class="form-group col-xs-2 col-country">
+						<select data-filter="country" class="filter-country filter form-control">
+							<option value="">Country</option>
+						</select>
+					</div>
+				</form>
+			</div>
 		</div>
+
 		<div class="spinner hidden">
 			<img class="spinner-image" src="spinner.gif" />
 		</div>
-		<ul class="list-group">
 
+		<hr>
+		<h1>Movies Results</h1>
+		<ul class="list-group">
+		
 		</ul>
 	</div>
 
-	<script
-		src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
-	<script
-		src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js'></script>
-	<script
-		src='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js'></script>
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <h4 class="modal-title"></h4>
+	      </div>
+	      <div class="modal-body">
+					<div class="movie-item">
+					<div class="movie-info">Year: <span class="year"></span></div>
+					<div class="movie-info">Director: <span class="director">n</span></div>
+					<div class="movie-info">Score: <span class="score"></span></div>
+					<div class="movie-info">Duration: <span class="duration"></span></div>
+					<div class="movie-info">Actors: <span class="actors"></span></div>
+					<div class="movie-info">Genres: <span class="genres"></span></div>
+					<div class="movie-info">Content-Rating: <span class="content-rating"></span></div>
+					<div class="movie-info">Language: <span class="language"></span></div>
+					<div class="movie-info">Country: <span class="country"></span></div>
+	      </div>
+				<a href="http://www.imdb.com/title/tt1104733/?ref_=fn_tt_tt_1" class="imdb-redirect">
+					<img src="imdb.png" alt="">
+				</a>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+	<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
+	<script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js'></script>
+	<script src='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js'></script>
 	<script src="js/index.js"></script>
 
 </body>
+
 </html>
