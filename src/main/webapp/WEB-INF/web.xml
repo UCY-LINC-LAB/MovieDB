@@ -4,18 +4,14 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
 
-	<display-name>Movie Database Web Application</display-name>
-
-	<listener>
-		<listener-class>com.moviedb.service.ServerInitialization</listener-class>
-	</listener>
+	<display-name>Archetype Created Web Application</display-name>
 
 	<servlet>
 		<servlet-name>jersey-servlet</servlet-name>
 		<servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
 		<init-param>
 			<param-name>jersey.config.server.provider.packages</param-name>
-			<param-value>com.moviedb</param-value>
+			<param-value>com.passport</param-value>
 		</init-param>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
@@ -24,6 +20,10 @@
 		<servlet-name>jersey-servlet</servlet-name>
 		<url-pattern>/rest/*</url-pattern>
 	</servlet-mapping>
+
+	<listener>
+		<listener-class>com.passport.service.ServerInitialization</listener-class>
+	</listener>
 
 	<filter>
 		<filter-name>CorsFilter</filter-name>
@@ -53,7 +53,7 @@
 			<param-value>10</param-value>
 		</init-param>
 	</filter>
-	
+
 	<filter-mapping>
 		<filter-name>CorsFilter</filter-name>
 		<url-pattern>/*</url-pattern>

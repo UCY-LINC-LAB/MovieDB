@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Movie Search</title>
+
+<link rel='stylesheet prefetch'
+	href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
+<link rel='stylesheet prefetch'
+	href='http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css'>
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+	<div class="container">
+		<div class="row" id="search">
+			<form id="search-form" action="" method="POST"
+				enctype="multipart/form-data">
+				<div class="form-group col-xs-9">
+					<input class="form-control" type="text"
+						placeholder="Search movie by keyword" />
+				</div>
+				<div class="form-group col-xs-3">
+					<button type="submit" class="btn btn-block btn-primary">Search</button>
+				</div>
+			</form>
+		</div>
+		<div class="row" id="filter">
+			<form>
+				<div class="form-group col-sm-3 col-xs-6 col-date">
+					<div style="bottom: 5px; position: relative; text-align: center;">Rating</div>
+					<div id="slider"></div>
+				</div>
+
+				<div class="form-group col-sm-3 col-xs-6 col-date">
+					<select data-filter="start-date"
+						class="filter-start-date filter form-control">
+						<option value="">Start Date</option>
+					</select>
+				</div>
+				<div class="form-group col-sm-3 col-xs-6 col-date">
+					<select data-filter="end-date"
+						class="filter-end-date filter form-control">
+						<option value="">End Date</option>
+					</select>
+				</div>
+
+				<div class="form-group col-sm-3 col-xs-6 col-lang">
+					<select data-filter="lang"
+						class="filter-language filter form-control">
+						<option value="">Language</option>
+					</select>
+				</div>
+				<div class="form-group col-sm-3 col-xs-6 col-content-rating">
+					<select data-filter="content"
+						class="filter-content filter form-control">
+						<option value="">Content Rating</option>
+					</select>
+				</div>
+				<div class="form-group col-sm-3 col-xs-6 col-country">
+					<select data-filter="country"
+						class="filter-country filter form-control">
+						<option value="">Country</option>
+					</select>
+				</div>
+			</form>
+		</div>
+		<div class="spinner hidden">
+			<img class="spinner-image" src="spinner.gif" />
+		</div>
+		<ul class="list-group">
+
+		</ul>
+	</div>
+
+	<script
+		src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
+	<script
+		src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js'></script>
+	<script
+		src='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js'></script>
+	<script src="js/index.js"></script>
+
+</body>
+</html>

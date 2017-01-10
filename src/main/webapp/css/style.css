@@ -1,0 +1,110 @@
+body {
+	padding-top: 30px;
+}
+.product {
+	margin-bottom: 30px;
+}
+.product-inner {
+	box-shadow: 0 0 10px rgba(0,0,0,.2);
+	padding: 10px;
+}
+.product img {
+	margin-bottom: 10px;
+}
+
+.filter-start-date,
+.filter-end-date{
+	max-width: 111px;
+}
+
+.spinner{
+	min-height: 200px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.imdb-link{
+	height: 100%;
+	margin: 0px;
+	padding: 0px;
+}
+
+.list-group-item{
+	display: flex;
+	align-items: center;
+}
+
+.list-group-item span{
+	margin-right: 10px;
+}
+
+.movie-title{
+	font-size: 18px;
+}
+
+.imdb-logo{
+	height: 35px;
+	margin: 0px;
+	padding: 0px;
+}
+
+.col-date{
+	max-width: 141px!important;
+}
+
+.filter-language, .filter-country{
+	max-width: 111px!important;
+}
+
+.filter-content{
+	max-width: 143px;
+}
+
+.col-lang{
+	max-width: 143px;
+}
+
+.col-content-rating{
+	max-width: 173px;
+}
+
+.col-country{
+	max-width: 128px;
+}
+
+
+.value {
+  position: absolute;
+  left: 50%;
+  margin: 0 0 0 -20px;
+  width: 40px;
+  text-align: center;
+  display: block;
+
+  font-weight: normal;
+  font-family: Verdana,Arial,sans-serif;
+  font-size: 14px;
+  color: #333;
+}
+
+*:focus {
+    outline: none;
+}
+.price-range-both.value {
+  width: 100px;
+  margin: 0 0 0 -50px;
+  top: 12px;
+}
+
+.price-range-both {
+  display: none;
+}
+
+.value i {
+  font-style: normal;
+}
+
+#slider{
+	max-width: 111px;
+}
