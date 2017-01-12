@@ -33,7 +33,7 @@ $('#myModal').on('show.bs.modal', function (e) {
 })
 
 $.ajax({
-	url : "http://localhost:8080/MovieDatabase/rest/utils/years/",
+	url : "/rest/utils/years/",
 	cache : false,
 	success : function(data) {
 		data.years.sort(function(a, b) {
@@ -53,7 +53,7 @@ $.ajax({
 });
 
 $.ajax({
-	url : "http://localhost:8080/MovieDatabase/rest/utils/languages/",
+	url : "/rest/utils/languages/",
 	cache : false,
 	success : function(data) {
 		data.languages.sort();
@@ -71,7 +71,7 @@ $.ajax({
 });
 
 $.ajax({
-	url : "http://localhost:8080/MovieDatabase/rest/utils/content-ratings/",
+	url : "/rest/utils/content-ratings/",
 	cache : false,
 	success : function(data) {
 		data.content_ratings.sort();
@@ -89,7 +89,7 @@ $.ajax({
 });
 
 $.ajax({
-	url : "http://localhost:8080/MovieDatabase/rest/utils/countries/",
+	url : "/rest/utils/countries/",
 	cache : false,
 	success : function(data) {
 		data.countries.sort();
@@ -146,7 +146,7 @@ $(document)
 					$
 							.ajax({
 								type : 'GET',
-								url : "http://localhost:8080/MovieDatabase/rest/movies/list",
+								url : "/rest/movies/list",
 								success : function(data) {
 									for (var i = 0; i < data.length; i++) {
 										$('ul.list-group')
@@ -181,7 +181,7 @@ $("#search-form")
 					$
 							.ajax({
 								type : 'GET',
-								url : "http://localhost:8080/MovieDatabase/rest/movies/filter?yearfrom="
+								url : "/rest/movies/filter?yearfrom="
 										+ start_date
 										+ "&yearto="
 										+ end_date
