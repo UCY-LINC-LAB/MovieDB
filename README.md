@@ -1,5 +1,6 @@
-# Movie Database Tomcat7 Webapp
+# Movie Database Webapp with Tomcat 7 under the hood
 
+portability dependencies from PaaSport FP7 project added in .pom file... to run without portability just remove these dependencies
 ----
 ## Usage
 1. Generate MovieDatabase.war file.
